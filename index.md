@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-# Phantom's Blog
+# Posts
 
 <div class="posts">
 {% for post in site.posts %}

@@ -109,6 +109,12 @@
       margin: 16px 0;
     }
 
+    footer {
+      color: var(--text-muted);
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
   </style>
 </head>
 
@@ -125,6 +131,8 @@
     <main>
       {{ content }}
     </main>
+
+    <footer>Phantom - &copy; {{ site.time | date: "%Y" }}</footer>
 
   </div>
 </body>
