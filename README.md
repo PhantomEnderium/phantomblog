@@ -1,0 +1,1 @@
+blog part of website
