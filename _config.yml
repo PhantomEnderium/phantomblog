@@ -2,4 +2,4 @@ title: Phantom's Blog
 author: PhantomEnderium
 description: Games, Coding, other daily things!
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
+permalink: /posts/:year/:month/:day/:title/
