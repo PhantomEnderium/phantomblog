@@ -80,9 +80,7 @@
     .post-content img {
       display: block;
       max-width: 100%;
-      width: 100%;
-      max-height: 400px;  /* cap tall images */
-      object-fit: cover;  /* crop to fit nicely */
+      height: auto;
       border-radius: var(--radius);
       margin: 16px 0;
     }
@@ -92,6 +90,23 @@
       padding: 12px;
       border-radius: var(--radius);
       overflow-x: auto;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin: 16px 0;
+    }
+
+    /* Default post images (Markdown ![](...)) */
+    .post-content img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      margin: 16px 0;
     }
 
   </style>
