@@ -18,4 +18,6 @@ ALL FREAKING CHRISTMAS.
 
 I worked Thanksgiving evening. Had off Black Friday. I come in today, and BAM. CHRISTMAS EVERYWHERE. Multiple christmas trees, lights, the WHOLE shebang. Marriott themselves aren't holding back either, my partner Nicole (who works overnight) said the minute 12am hit on Black Friday, the music switched to Christmas tracks. Our music is controlled by Marriott themselves, so they just set their hotel playlist to music the literal second Thanksgiving was over. And now I deal with this until, how long? December 26th? January 1st? Who knows?! I'm shocked they didn't start it earlier!
 
+### Working Nights
+
 Nights are pretty boring. Just checking people in and doing some side work that's needed. Otherwise I end up doing homework or something. I used to do morning shifts which were a lot more eventful but with doing college classes those get in the way. Semester is almost over though so hopefully I can go back to morning shifts, where I can be done by 3pm and go home with the rest of the day to myself!
