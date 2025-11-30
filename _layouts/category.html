@@ -4,12 +4,25 @@ layout: default
 
 <h2>Posts in category: {{ page.category }}</h2>
 
-<ul>
+<div class="posts">
   {% assign posts_in_category = site.posts | where: "category", page.category %}
-  {% for post in posts_in_category %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span style="color: var(--text-muted); font-size: 0.9rem;">— {{ post.date | date: "%B %-d, %Y" }}</span>
-    </li>
-  {% endfor %}
-</ul>
+  {% if posts_in_category.size > 0 %}
+    {% for post in posts_in_category %}
+      <a href="{{ post.url | relative_url }}">
+        <div class="post-card">
+          <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+          <div class="post-title" style="font-size: 1.25rem; font-weight: 600;">
+            {{ post.title }}
+          </div>
+          {% if post.excerpt %}
+            <p style="color: var(--text-muted); margin-top: 8px;">
+              {{ post.excerpt | strip_html | truncate: 140 }}
+            </p>
+          {% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  {% else %}
+    <p>No posts found in this category.</p>
+  {% endif %}
+</div>
