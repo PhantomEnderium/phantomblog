@@ -2,27 +2,57 @@
 layout: default
 ---
 
-<h2>Posts in category: {{ page.category }}</h2>
+{% unless page.url == '/categories/' %}
+<p style="margin-bottom: 1rem;">
+  <a href="{{ '/categories/' | relative_url }}">← Back to all categories</a>
+</p>
+{% endunless %}
+
+<h1>
+  {% if page.url == '/categories/' %}
+    Categories
+  {% else %}
+    Category: {{ page.category }}
+  {% endif %}
+</h1>
 
 <div class="posts">
-  {% assign posts_in_category = site.posts | where: "category", page.category %}
-  {% if posts_in_category.size > 0 %}
-    {% for post in posts_in_category %}
-      <a href="{{ post.url | relative_url }}">
+  {% if page.url == '/categories/' %}
+    <!-- Main categories index: show all categories as “cards” -->
+    {% assign categories = site.posts | map: "category" | uniq %}
+    {% for cat in categories %}
+      <a href="{{ '/categories/' | append: cat | downcase | append: '/' | relative_url }}">
         <div class="post-card">
-          <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
           <div class="post-title" style="font-size: 1.25rem; font-weight: 600;">
-            {{ post.title }}
+            {{ cat }}
           </div>
-          {% if post.excerpt %}
-            <p style="color: var(--text-muted); margin-top: 8px;">
-              {{ post.excerpt | strip_html | truncate: 140 }}
-            </p>
-          {% endif %}
+          <p style="color: var(--text-muted); margin-top: 4px;">
+            {{ site.posts | where: "category", cat | size }} post{% if site.posts | where: "category", cat | size != 1 %}s{% endif %}
+          </p>
         </div>
       </a>
     {% endfor %}
   {% else %}
-    <p>No posts found in this category.</p>
+    <!-- Individual category page: show posts -->
+    {% assign posts_in_category = site.posts | where: "category", page.category %}
+    {% if posts_in_category.size > 0 %}
+      {% for post in posts_in_category %}
+        <a href="{{ post.url | relative_url }}">
+          <div class="post-card">
+            <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+            <div class="post-title" style="font-size: 1.25rem; font-weight: 600;">
+              {{ post.title }}
+            </div>
+            {% if post.excerpt %}
+              <p style="color: var(--text-muted); margin-top: 8px;">
+                {{ post.excerpt | strip_html | truncate: 140 }}
+              </p>
+            {% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    {% else %}
+      <p>No posts found in this category.</p>
+    {% endif %}
   {% endif %}
 </div>
